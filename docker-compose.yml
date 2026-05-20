@@ -22,7 +22,7 @@
 #     this on an internet-facing host.
 #
  
-  services:
+ services:
   gateway:
     build: .
     image: hermes-agent
@@ -34,8 +34,7 @@
     environment:
       - HERMES_UID=${HERMES_UID:-10000}
       - HERMES_GID=${HERMES_GID:-10000}
-      - PORT=3000
-    command: hermes web --port 3000
+    command: hermes gateway
 
       # To expose the OpenAI-compatible API server beyond localhost,
       # uncomment BOTH lines (API_SERVER_KEY is mandatory for auth):
